@@ -6,21 +6,23 @@ let index = new Vue({
     },
     methods : {
         login : function () {
+            let url = "/login";
             let params = {
                 account : this.account,
                 password : this.password
             };
-            /*this.$http.post(url, params).then(function (value) {
-
-            })*/
-            $.ajax({
-                url : "/login",
-                data : params,
-                type : "post",
-                success : function (data) {
-                    
+            this.$http.post(url, params, {emulateJSON : true}).then(function (value) {
+                let response = value.data
+                if(response.success){
+                    window.location.href = "/home";
+                }else{
+                    layerUtil.fail(response.msg)
                 }
-            })
+            });
+
+        },
+        register : function () {
+            
         }
     },
 

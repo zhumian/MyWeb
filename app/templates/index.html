@@ -8,7 +8,7 @@
 <div id="index" class="layui-container">
     <div class="layui-row" style="margin-top: 180px">
         <div class="layui-col-md4 layui-col-md-offset4">
-          <form class="layui-form">
+          <div class="layui-form">
                 <div class="layui-form-item">
                     <label class="layui-form-label">账号</label>
                     <div class="layui-input-block">
@@ -22,9 +22,9 @@
                     </div>
                 </div>
               <div class="layui-form-item">
-                <button class=" layui-btn layui-btn-radius layui-btn-sm" style="float: right" v-on:click="login">登录</button>
+                <button class=" layui-btn layui-btn-radius layui-btn-sm" style="float: right" @click="login">登录</button>
               </div>
-            </form>
+            </div>
         </div>
 
     </div>
@@ -32,5 +32,5 @@
 {% endblock %}
 
 {% block footer %}
-<script src="{{url_for('static', filename='js/index.js')}}" xmlns:v-on="http://www.w3.org/1999/xhtml"></script>
+<script src="{{url_for('static', filename='js/index.js')}}" ></script>
 {% endblock %}
